@@ -1,0 +1,349 @@
+{
+  "commands": [
+    {
+      "min_id": 32,
+      "name": "imu",
+      "payload": [
+        {
+          "name": "select sensor",
+          "c_type": "uint8_t",
+          "bits": [
+            "accelerometer",
+            "magnetometer",
+            "gyroscope",
+            "euler",
+            "linear_accel",
+            "gravity",
+            "quaternion"
+          ],
+          "optional": false
+        },
+        {
+          "name": "interval",
+          "c_type": "uint16_t",
+          "optional": true
+        }
+      ]
+    },
+    {
+      "min_id": 33,
+      "name": "ultraschall",
+      "payload": [
+        {
+          "name": "select sensor",
+          "c_type": "uint8_t",
+          "bits": ["us-1", "us-2", "us-3", "us-4", "us-5", "us-6"],
+          "optional": false
+        },
+        {
+          "name": "interval",
+          "c_type": "uint16_t",
+          "optional": true
+        }
+      ]
+    },
+    {
+      "min_id": 34,
+      "name": "encoder",
+      "payload": [
+        {
+          "name": "select sensor",
+          "c_type": "uint8_t",
+          "bits": ["encoder-1", "encoder-2", "encoder-3", "encoder-4"],
+          "optional": false
+        },
+        {
+          "name": "interval",
+          "c_type": "uint16_t",
+          "optional": true
+        }
+      ]
+    },
+    {
+      "min_id": 35,
+      "name": "helligkeit",
+      "payload": [
+        {
+          "name": "interval",
+          "c_type": "uint16_t",
+          "optional": true
+        }
+      ]
+    },
+    {
+      "min_id": 36,
+      "name": "temperature",
+      "payload": [
+        {
+          "name": "interval",
+          "c_type": "uint16_t",
+          "optional": true
+        }
+      ]
+    },
+    {
+      "min_id": 37,
+      "name": "bat voltage",
+      "payload": [
+        {
+          "name": "interval",
+          "c_type": "uint16_t",
+          "optional": true
+        }
+      ]
+    },
+    {
+      "min_id": 38,
+      "name": "user button",
+      "payload": [
+        {
+          "name": "use user button",
+          "c_type": "uint8_t",
+          "bits": ["use user button"],
+          "optional": false
+        }
+      ]
+    },
+    {
+      "min_id": 39,
+      "name": "led strip",
+      "payload": [
+        {
+          "name": "animation type",
+          "c_type": "uint8_t",
+          "optional": false
+        },
+        {
+          "name": "color r",
+          "c_type": "uint8_t",
+          "optional": false
+        },
+        {
+          "name": "color g",
+          "c_type": "uint8_t",
+          "optional": false
+        },
+        {
+          "name": "color b",
+          "c_type": "uint8_t",
+          "optional": false
+        },
+        {
+          "name": "color w",
+          "c_type": "uint8_t",
+          "optional": false
+        }
+      ]
+    },
+    {
+      "min_id": 40,
+      "name": "motor control",
+      "payload": [
+        {
+          "name": "x speed",
+          "c_type": "uint16_t",
+          "optional": false
+        },
+        {
+          "name": "y speed",
+          "c_type": "uint16_t",
+          "optional": false
+        },
+        {
+          "name": "phi speed",
+          "c_type": "uint16_t",
+          "optional": false
+        }
+      ]
+    },
+    {
+      "min_id": 41,
+      "name": "pozyx power",
+      "payload": [
+        {
+          "name": "pozyx power control",
+          "c_type": "uint8_t",
+          "bits": ["power"],
+          "optional": false
+        }
+      ]
+    },
+    {
+      "min_id": 42,
+      "name": "pozyx",
+      "payload": [
+        {
+          "name": "select sensor",
+          "c_type": "uint8_t",
+          "bits": ["position", "orientation"],
+          "optional": false
+        },
+        {
+          "name": "interval",
+          "c_type": "uint16_t",
+          "optional": true
+        }
+      ]
+    },
+    {
+      "min_id": 43,
+      "name": "pozyx config",
+      "payload": []
+    }
+  ],
+  "data": [
+    {
+      "min_id": 0,
+      "name": "command stauts",
+      "payload": [
+        {
+          "name": "status code",
+          "c_type": "uint8_t"
+        }
+      ]
+    },
+    {
+      "min_id": 1,
+      "name": "imu",
+      "payload": [
+        {
+          "name": "sensor bit",
+          "c_type": "uint8_t",
+          "bits": [
+            "accelerometer",
+            "magnetometer",
+            "gyroscope",
+            "euler",
+            "linear_accel",
+            "gravity",
+            "quaternion"
+          ]
+        },
+        {
+          "name": "w",
+          "c_type": "double"
+        },
+        {
+          "name": "x",
+          "c_type": "double"
+        },
+        {
+          "name": "y",
+          "c_type": "double"
+        },
+        {
+          "name": "z",
+          "c_type": "double"
+        }
+      ]
+    },
+    {
+      "min_id": 2,
+      "name": "ultraschall",
+      "payload": [
+        {
+          "name": "sensor bit",
+          "c_type": "uint16_t",
+          "bits": ["us-1", "us-2", "us-3", "us-4", "us-5", "us-6"]
+        },
+        {
+          "name": "distance",
+          "c_type": "float"
+        }
+      ]
+    },
+    {
+      "min_id": 3,
+      "name": "encoder",
+      "payload": [
+        {
+          "name": "sensor bit",
+          "c_type": "uint16_t",
+          "bits": ["encoder-1", "encoder-2", "encoder-3", "encoder-4"]
+        },
+        {
+          "name": "counter",
+          "c_type": "uint16_t"
+        }
+      ]
+    },
+    {
+      "min_id": 4,
+      "name": "helligkeit",
+      "payload": [
+        {
+          "name": "helligkeit",
+          "c_type": "float"
+        }
+      ]
+    },
+    {
+      "min_id": 5,
+      "name": "temperature",
+      "payload": [
+        {
+          "name": "temperature",
+          "c_type": "int8_t"
+        }
+      ]
+    },
+    {
+      "min_id": 6,
+      "name": "bat voltage",
+      "payload": [
+        {
+          "name": "voltage",
+          "c_type": "float"
+        }
+      ]
+    },
+    {
+      "min_id": 7,
+      "name": "user button",
+      "payload": [
+        {
+          "name": "is pressed",
+          "c_type": "uint8_t",
+          "bit": ["is pressed"]
+        }
+      ]
+    },
+    {
+      "min_id": 8,
+      "name": "pozyx",
+      "payload": [
+        {
+          "name": "sensor bit",
+          "c_type": "uint8_t",
+          "bits": ["position", "orientation"]
+        },
+        {
+          "name": "x",
+          "c_type": "float"
+        },
+        {
+          "name": "y",
+          "c_type": "float"
+        },
+        {
+          "name": "z",
+          "c_type": "float"
+        }
+      ]
+    },
+    {
+      "min_id": 9,
+      "name": "pozyx config",
+      "payload": [
+        {
+          "name": "tag id",
+          "c_type": "uint16_t"
+        },
+        {
+          "name": "firmware version",
+          "c_type": "uint16_t"
+        }
+      ]
+    }
+  ]
+}
