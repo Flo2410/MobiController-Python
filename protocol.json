@@ -27,7 +27,7 @@
     },
     {
       "min_id": 33,
-      "name": "ultraschall",
+      "name": "ultrasonic sensor",
       "payload": [
         {
           "name": "select sensor",
@@ -61,7 +61,7 @@
     },
     {
       "min_id": 35,
-      "name": "helligkeit",
+      "name": "brightness",
       "payload": [
         {
           "name": "interval",
@@ -239,7 +239,7 @@
     },
     {
       "min_id": 2,
-      "name": "ultraschall",
+      "name": "ultrasonic sensor",
       "payload": [
         {
           "name": "sensor bit",
@@ -269,10 +269,10 @@
     },
     {
       "min_id": 4,
-      "name": "helligkeit",
+      "name": "brightness",
       "payload": [
         {
-          "name": "helligkeit",
+          "name": "brightness",
           "c_type": "float"
         }
       ]
