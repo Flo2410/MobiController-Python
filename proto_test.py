@@ -3,12 +3,17 @@ from min.minmon import MINMonitor
 from min.PayloadBuilder import PayloadBuilder
 from logging import INFO
 import json
-from numpy import frombuffer, int8
+from numpy import uint8
 
 min_mon: MINMonitor = None
 proto_file = None
 
-
+def convert_subdevice_mask_to_index(mask: uint8) -> uint8:
+    for i in range(8):
+        current_mask = 0x01 << i
+        if (mask & current_mask) == current_mask:
+            return i
+      
 def decode_frame(frame: MINFrame):
     global proto_file
     print(f"new Frame: ID: {frame.min_id} len: {len(frame.payload)} payload: 0x{frame.payload.hex()}")
@@ -24,7 +29,7 @@ def decode_frame(frame: MINFrame):
             for value in data.get("payload"):
                 bits = value.get("bits")
                 if bits != None:
-                    print(f"{bits[pb.read_c_type(value.get('c_type')) -1]}")
+                    print(f"{bits[convert_subdevice_mask_to_index(pb.read_c_type(value.get('c_type')))]}")
                     continue
 
                 print(f"{value.get('name')} - {value.get('c_type')}: {pb.read_c_type(value.get('c_type'))}")
