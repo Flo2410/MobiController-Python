@@ -97,9 +97,8 @@
       "name": "user button",
       "payload": [
         {
-          "name": "use user button",
+          "name": "user button mode",
           "c_type": "uint8_t",
-          "bits": ["use user button"],
           "optional": false
         }
       ]
