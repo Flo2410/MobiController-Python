@@ -197,7 +197,8 @@
       "payload": [
         {
           "name": "status code",
-          "c_type": "uint8_t"
+          "c_type": "uint8_t",
+          "codes": ["OK", "ERROR", "INVALID_PARAMETER"]
         }
       ]
     },
