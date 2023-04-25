@@ -198,7 +198,7 @@
         {
           "name": "status code",
           "c_type": "uint8_t",
-          "codes": ["OK", "ERROR", "INVALID_PARAMETER"]
+          "codes": ["OK", "ERROR", "INVALID_PARAMETER", "UNKOWN_COMMAND"]
         }
       ]
     },
