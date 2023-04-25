@@ -34,17 +34,7 @@ class KeyboardThread(Thread):
 min_mon: MINMonitor = None
 
 
-
-def encode_uint(number: uint) -> ndarray:
-    return bytes(struct.pack('<H', number))
-
-
-def encode_float(number: float) -> np.ndarray:
-    # convert the float to a uint8 array using tobytes()
-    return np.frombuffer(float32(number).tobytes(), dtype=uint8)
-
-
-def parse_int(string: str) -> uint8:
+def parse_int(string: str):
     try:
         if string.startswith("0x"):
             return int(string, 16)
@@ -55,15 +45,15 @@ def parse_int(string: str) -> uint8:
     except ValueError:
         return 0
 
-def parse_payload(arr: list[str]) -> list[uint8]:
-    out = []
+def parse_payload(arr: list[str]) -> bytes:
+    pb = PayloadBuilder()
     for num in arr:
         # check if is int or float:
         if "." in num: # is float
-            out.extend(encode_float(num))
+            pb.append_float(num)
         else:
-            out.extend(encode_uint(parse_int(num)))
-    return out
+            pb.append_uint(parse_int(num))
+    return pb.get_payload()
 
 def convert_subdevice_mask_to_index(mask: uint8) -> uint8:
     for i in range(8):
@@ -120,7 +110,7 @@ def keyboard_callback(inp: str):
     payload = parse_payload(arr)
     # print(f"min_id: {hex(min_id)}, data: {payload}")
     
-    min_mon.send_frame(min_id, bytes(payload))
+    min_mon.send_frame(min_id, payload)
 
 
 def main():
