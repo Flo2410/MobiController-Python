@@ -162,8 +162,7 @@
         {
           "name": "pozyx power control",
           "c_type": "uint8_t",
-          "bits": ["power"],
-          "optional": false
+          "optional": true
         }
       ]
     },
