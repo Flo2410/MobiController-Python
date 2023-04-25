@@ -13,9 +13,12 @@ from threading import Thread, Event
 from numpy import uint8, float32, ndarray, uint
 import numpy as np
 import struct
+from min.PayloadBuilder import PayloadBuilder
+import json
 
 kthread = None
 min_mon: MINMonitor = None
+proto_file = None
 
 class KeyboardThread(Thread):
 
@@ -62,7 +65,36 @@ def parse_payload(arr: list[str]) -> list[uint8]:
             out.extend(encode_uint(parse_int(num)))
     return out
 
+def convert_subdevice_mask_to_index(mask: uint8) -> uint8:
+    for i in range(8):
+        current_mask = 0x01 << i
+        if (mask & current_mask) == current_mask:
+            return i
+        
+def decode_frame(frame: MINFrame):
+    global proto_file
+    # print(f"new Frame: ID: {frame.min_id} len: {len(frame.payload)} payload: 0x{frame.payload.hex()}")
 
+    proto_data: list = proto_file.get("data")
+
+    for data in proto_data:
+        if data.get("min_id") == frame.min_id:
+            print(data.get("name"), end=": ")
+
+            pb = PayloadBuilder(frame.payload)
+
+            for value in data.get("payload"):
+                bits = value.get("bits")
+                if bits != None:
+                    print(f"{bits[convert_subdevice_mask_to_index(pb.read_c_type(value.get('c_type')))]}")
+                    continue
+
+                print(f"{value.get('name')} - {value.get('c_type')}: {pb.read_c_type(value.get('c_type'))}")
+            break;
+
+    # proto_data_imu = [x for x in proto_data if x.get("name") == "imu"][0]
+
+    
 def keyboard_callback(inp: str):
     global kthread, min_mon
 
@@ -84,9 +116,14 @@ def keyboard_callback(inp: str):
 
 
 def main():
-    global kthread, min_mon
+    global kthread, min_mon, proto_file
 
     print("MobiController CLI\n")
+
+        # load the proto json file
+    with open("protocol.json") as file:
+        proto_file = json.loads(file.read())
+
     
     min_mon = MINMonitor(port="/dev/ttyACM1", loglevel=INFO)
             
@@ -96,7 +133,8 @@ def main():
     while True:
         while min_mon._recv_messages.qsize() > 0:
             receved_frame: MINFrame = min_mon.recv(block=False)
-            print(f"new Frame: ID: {receved_frame.min_id} len: {len(receved_frame.payload)} payload: 0x{receved_frame.payload.hex()}")
+            # print(f"new Frame: ID: {receved_frame.min_id} len: {len(receved_frame.payload)} payload: 0x{receved_frame.payload.hex()}")
+            decode_frame(receved_frame)
                 
     
 def bye():
