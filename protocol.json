@@ -243,7 +243,7 @@
       "payload": [
         {
           "name": "sensor bit",
-          "c_type": "uint16_t",
+          "c_type": "uint8_t",
           "bits": ["us-1", "us-2", "us-3", "us-4", "us-5", "us-6"]
         },
         {
@@ -258,7 +258,7 @@
       "payload": [
         {
           "name": "sensor bit",
-          "c_type": "uint16_t",
+          "c_type": "uint8_t",
           "bits": ["encoder-1", "encoder-2", "encoder-3", "encoder-4"]
         },
         {
