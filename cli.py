@@ -84,12 +84,20 @@ def decode_frame(frame: MINFrame):
             pb = PayloadBuilder(frame.payload)
 
             for value in data.get("payload"):
+                read_value = pb.read_c_type(value.get('c_type'))
+
+                # check for "bits"
                 bits = value.get("bits")
                 if bits != None:
-                    print(f"{bits[convert_subdevice_mask_to_index(pb.read_c_type(value.get('c_type')))]}")
+                    print(f"{bits[convert_subdevice_mask_to_index(read_value)]}")
                     continue
+                
+                # check for "code". used by status code 
+                codes = value.get("codes")
+                if codes != None:
+                    read_value = f"{read_value} -> {codes[read_value]}"
 
-                print(f"{value.get('name')} - {value.get('c_type')}: {pb.read_c_type(value.get('c_type'))}")
+                print(f"{value.get('name')} - {value.get('c_type')}: {read_value}")
             break;
 
     # proto_data_imu = [x for x in proto_data if x.get("name") == "imu"][0]
