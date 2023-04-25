@@ -16,13 +16,13 @@ def convert_subdevice_mask_to_index(mask: uint8) -> uint8:
       
 def decode_frame(frame: MINFrame):
     global proto_file
-    print(f"new Frame: ID: {frame.min_id} len: {len(frame.payload)} payload: 0x{frame.payload.hex()}")
+    # print(f"new Frame: ID: {frame.min_id} len: {len(frame.payload)} payload: 0x{frame.payload.hex()}")
 
     proto_data: list = proto_file.get("data")
 
     for data in proto_data:
         if data.get("min_id") == frame.min_id:
-            print(data.get("name"))
+            print(data.get("name"), end=": ")
 
             pb = PayloadBuilder(frame.payload)
 
