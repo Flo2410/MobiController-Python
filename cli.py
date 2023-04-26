@@ -30,7 +30,7 @@ class KeyboardThread(Thread):
 
     def run(self):
         while not self._stop_event.is_set():
-            self.input_cbk(input("")) #waits to get input + Return
+            self.input_cbk(input("").strip()) #waits to get input + Return
 min_mon: MINMonitor = None
 
 
