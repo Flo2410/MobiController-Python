@@ -99,7 +99,7 @@
         {
           "name": "user button mode",
           "c_type": "uint8_t",
-          "optional": false
+          "optional": true
         }
       ]
     },
@@ -108,29 +108,29 @@
       "name": "led strip",
       "payload": [
         {
-          "name": "animation type",
+          "name": "animation preset",
           "c_type": "uint8_t",
-          "optional": false
+          "optional": true
         },
         {
           "name": "color r",
           "c_type": "uint8_t",
-          "optional": false
+          "optional": true
         },
         {
           "name": "color g",
           "c_type": "uint8_t",
-          "optional": false
+          "optional": true
         },
         {
           "name": "color b",
           "c_type": "uint8_t",
-          "optional": false
+          "optional": true
         },
         {
           "name": "color w",
           "c_type": "uint8_t",
-          "optional": false
+          "optional": true
         }
       ]
     },
@@ -141,17 +141,17 @@
         {
           "name": "x speed",
           "c_type": "int16_t",
-          "optional": false
+          "optional": true
         },
         {
           "name": "y speed",
           "c_type": "int16_t",
-          "optional": false
+          "optional": true
         },
         {
           "name": "phi speed",
           "c_type": "int16_t",
-          "optional": false
+          "optional": true
         }
       ]
     },
