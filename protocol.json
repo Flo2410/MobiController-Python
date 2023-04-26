@@ -110,7 +110,8 @@
         {
           "name": "animation preset",
           "c_type": "uint8_t",
-          "optional": true
+          "optional": true,
+          "codes": ["DRIVING_LIGHTS", "BEACON", "BLINK"]
         },
         {
           "name": "color r",
@@ -129,6 +130,31 @@
         },
         {
           "name": "color w",
+          "c_type": "uint8_t",
+          "optional": true
+        },
+        {
+          "name": "update_rate",
+          "c_type": "uint8_t",
+          "optional": true
+        },
+        {
+          "name": "line_length",
+          "c_type": "uint8_t",
+          "optional": true
+        },
+        {
+          "name": "line_count",
+          "c_type": "uint8_t",
+          "optional": true
+        },
+        {
+          "name": "rotate_left",
+          "c_type": "uint8_t",
+          "optional": true
+        },
+        {
+          "name": "frame_count",
           "c_type": "uint8_t",
           "optional": true
         }
