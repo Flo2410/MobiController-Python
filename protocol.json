@@ -223,7 +223,7 @@
         {
           "name": "status code",
           "c_type": "uint8_t",
-          "codes": ["OK", "ERROR", "INVALID_PARAMETER", "UNKOWN_COMMAND"]
+          "codes": ["OK", "ERROR", "INVALID_PARAMETER", "UNKOWN_COMMAND", "BATTERY_WARNING"]
         }
       ]
     },
