@@ -140,17 +140,17 @@
       "payload": [
         {
           "name": "x speed",
-          "c_type": "uint16_t",
+          "c_type": "int16_t",
           "optional": false
         },
         {
           "name": "y speed",
-          "c_type": "uint16_t",
+          "c_type": "int16_t",
           "optional": false
         },
         {
           "name": "phi speed",
-          "c_type": "uint16_t",
+          "c_type": "int16_t",
           "optional": false
         }
       ]
