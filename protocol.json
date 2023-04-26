@@ -111,7 +111,7 @@
           "name": "animation preset",
           "c_type": "uint8_t",
           "optional": true,
-          "codes": ["DRIVING_LIGHTS", "BEACON", "BLINK"]
+          "codes": ["DRIVING_LIGHTS", "BEACON", "BLINK", "ON"]
         },
         {
           "name": "color r",
