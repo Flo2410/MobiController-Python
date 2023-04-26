@@ -53,6 +53,8 @@ def parse_payload(arr: list[str]) -> bytes:
             pb.append_float(num)
         elif "uint16" in num:
             pb.append_uint16(parse_int(num.removeprefix("uint16_")))
+        elif "int16" in num or "-" in num:
+            pb.append_int16(parse_int(num.removeprefix("int16_")))
         else:
             pb.append_uint(parse_int(num))
     return pb.get_payload()
