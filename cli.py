@@ -71,7 +71,7 @@ def decode_frame(frame: MINFrame):
 
     for data in proto_data:
         if data.get("min_id") == frame.min_id:
-            print(data.get("name"), end=": ")
+            print(data.get("name"), end=":\n")
 
             pb = PayloadBuilder(frame.payload)
 
