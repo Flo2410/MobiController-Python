@@ -372,6 +372,10 @@
         {
           "name": "firmware version",
           "c_type": "uint8_t"
+        },
+        {
+          "name": "harware version",
+          "c_type": "uint8_t"
         }
       ]
     },
