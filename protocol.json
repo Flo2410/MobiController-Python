@@ -367,11 +367,11 @@
       "payload": [
         {
           "name": "tag id",
-          "c_type": "uint16_t"
+          "c_type": "uint8_t"
         },
         {
           "name": "firmware version",
-          "c_type": "uint16_t"
+          "c_type": "uint8_t"
         }
       ]
     },
