@@ -213,6 +213,11 @@
       "min_id": 43,
       "name": "pozyx config",
       "payload": []
+    },
+    {
+      "min_id": 62,
+      "name": "Firmware Info",
+      "payload": []
     }
   ],
   "data": [
@@ -367,6 +372,16 @@
         {
           "name": "firmware version",
           "c_type": "uint16_t"
+        }
+      ]
+    },
+    {
+      "min_id": 63,
+      "name": "Firmware Info",
+      "payload": [
+        {
+          "name": "info",
+          "c_type": "string"
         }
       ]
     }
