@@ -7,12 +7,10 @@
 
 from min.min import  MINFrame
 from min.minmon import MINMonitor
-from logging import INFO
+from logging import INFO, basicConfig
 import sys
 from threading import Thread, Event
-from numpy import uint8, float32, ndarray, uint
-import numpy as np
-import struct
+from numpy import uint8
 from min.PayloadBuilder import PayloadBuilder
 import json
 
@@ -78,7 +76,10 @@ def decode_frame(frame: MINFrame):
             pb = PayloadBuilder(frame.payload)
 
             for value in data.get("payload"):
-                read_value = pb.read_c_type(value.get('c_type'))
+                if value.get("c_type").lower() == "string":
+                    read_value = pb.read_string()
+                else:
+                    read_value = pb.read_c_type(value.get('c_type'))
 
                 # check for "bits"
                 bits = value.get("bits")
@@ -126,7 +127,7 @@ def main():
     with open("protocol.json") as file:
         proto_file = json.loads(file.read())
 
-    
+    basicConfig(level=INFO)
     min_mon = MINMonitor(port="/dev/ttyACM1", loglevel=INFO)
             
     #start the Keyboard thread
