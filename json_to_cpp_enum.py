@@ -13,6 +13,11 @@ def main():
     f = open("protocol.json")
     data = json.load(f)
 
+    print("// --------------------------------------------------")
+    print("// Begin generated code from protocol.json")
+    print("// --------------------------------------------------")
+    print("")
+
     for type in data:
         print(f"// {type}")
         print(f"enum class {type.upper()} {'{'}")
@@ -51,6 +56,9 @@ def main():
                 payload_name = payload.get("name").replace(" ", "_").upper()
                 extract_codes(payload_name, codes)
 
+    print("// --------------------------------------------------")
+    print("// END generated code")
+    print("// --------------------------------------------------")
 
 
 if __name__ == "__main__":
