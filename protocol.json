@@ -366,8 +366,8 @@
       "name": "pozyx config",
       "payload": [
         {
-          "name": "tag id",
-          "c_type": "uint8_t"
+          "name": "network id",
+          "c_type": "uint16_t"
         },
         {
           "name": "firmware version",
