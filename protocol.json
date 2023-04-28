@@ -199,7 +199,7 @@
         {
           "name": "select sensor",
           "c_type": "uint8_t",
-          "bits": ["position", "orientation"],
+          "bits": ["position", "euler", "quaternion"],
           "optional": false
         },
         {
@@ -345,7 +345,11 @@
         {
           "name": "sensor bit",
           "c_type": "uint8_t",
-          "bits": ["position", "orientation"]
+          "bits": ["position", "euler", "quaternion"]
+        },
+        {
+          "name": "w",
+          "c_type": "float"
         },
         {
           "name": "x",
