@@ -363,7 +363,7 @@
     },
     {
       "min_id": 9,
-      "name": "pozyx config",
+      "name": "pozyx info",
       "payload": [
         {
           "name": "network id",
