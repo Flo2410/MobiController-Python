@@ -5,13 +5,13 @@
 # Description: CLI for the Mobi-Contoller 
 # ----------------------------------------------------------------------------------------------------------------------------------------------
 
-from min.min import  MINFrame
+from min import MINFrame
 from min.minmon import MINMonitor
+from min.PayloadBuilder import PayloadBuilder
 from logging import INFO, basicConfig
 import sys
 from threading import Thread, Event
 from numpy import uint8
-from min.PayloadBuilder import PayloadBuilder
 import json
 
 kthread = None
