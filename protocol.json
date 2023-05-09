@@ -215,6 +215,11 @@
       "payload": []
     },
     {
+      "min_id": 61,
+      "name": "disable all intervals",
+      "payload": []
+    },
+    {
       "min_id": 62,
       "name": "Firmware Info",
       "payload": []
