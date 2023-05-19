@@ -128,7 +128,7 @@ def main():
         proto_file = json.loads(file.read())
 
     basicConfig(level=INFO)
-    min_mon = MINMonitor(port="/dev/ttyACM1", loglevel=INFO)
+    min_mon = MINMonitor(port="/dev/ttyACM0", loglevel=INFO)
             
     #start the Keyboard thread
     kthread = KeyboardThread(keyboard_callback)
