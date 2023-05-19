@@ -15,13 +15,11 @@
             "linear_accel",
             "gravity",
             "quaternion"
-          ],
-          "optional": false
+          ]
         },
         {
           "name": "interval",
-          "c_type": "uint16_t",
-          "optional": true
+          "c_type": "uint16_t"
         }
       ]
     },
@@ -32,13 +30,11 @@
         {
           "name": "select sensor",
           "c_type": "uint8_t",
-          "bits": ["us-1", "us-2", "us-3", "us-4", "us-5", "us-6"],
-          "optional": false
+          "bits": ["us-1", "us-2", "us-3", "us-4", "us-5", "us-6"]
         },
         {
           "name": "interval",
-          "c_type": "uint16_t",
-          "optional": true
+          "c_type": "uint16_t"
         }
       ]
     },
@@ -49,13 +45,11 @@
         {
           "name": "select sensor",
           "c_type": "uint8_t",
-          "bits": ["encoder-1", "encoder-2", "encoder-3", "encoder-4"],
-          "optional": false
+          "bits": ["encoder-1", "encoder-2", "encoder-3", "encoder-4"]
         },
         {
           "name": "interval",
-          "c_type": "uint16_t",
-          "optional": true
+          "c_type": "uint16_t"
         }
       ]
     },
@@ -65,8 +59,7 @@
       "payload": [
         {
           "name": "interval",
-          "c_type": "uint16_t",
-          "optional": true
+          "c_type": "uint16_t"
         }
       ]
     },
@@ -76,8 +69,7 @@
       "payload": [
         {
           "name": "interval",
-          "c_type": "uint16_t",
-          "optional": true
+          "c_type": "uint16_t"
         }
       ]
     },
@@ -87,8 +79,7 @@
       "payload": [
         {
           "name": "interval",
-          "c_type": "uint16_t",
-          "optional": true
+          "c_type": "uint16_t"
         }
       ]
     },
@@ -98,8 +89,7 @@
       "payload": [
         {
           "name": "user button mode",
-          "c_type": "uint8_t",
-          "optional": true
+          "c_type": "uint8_t"
         }
       ]
     },
@@ -110,53 +100,43 @@
         {
           "name": "animation preset",
           "c_type": "uint8_t",
-          "optional": true,
           "codes": ["DRIVING_LIGHTS", "BEACON", "BLINK", "ON"]
         },
         {
           "name": "color r",
-          "c_type": "uint8_t",
-          "optional": true
+          "c_type": "uint8_t"
         },
         {
           "name": "color g",
-          "c_type": "uint8_t",
-          "optional": true
+          "c_type": "uint8_t"
         },
         {
           "name": "color b",
-          "c_type": "uint8_t",
-          "optional": true
+          "c_type": "uint8_t"
         },
         {
           "name": "color w",
-          "c_type": "uint8_t",
-          "optional": true
+          "c_type": "uint8_t"
         },
         {
           "name": "update_rate",
-          "c_type": "uint8_t",
-          "optional": true
+          "c_type": "uint8_t"
         },
         {
           "name": "line_length",
-          "c_type": "uint8_t",
-          "optional": true
+          "c_type": "uint8_t"
         },
         {
           "name": "line_count",
-          "c_type": "uint8_t",
-          "optional": true
+          "c_type": "uint8_t"
         },
         {
           "name": "rotate_left",
-          "c_type": "uint8_t",
-          "optional": true
+          "c_type": "uint8_t"
         },
         {
           "name": "frame_count",
-          "c_type": "uint8_t",
-          "optional": true
+          "c_type": "uint8_t"
         }
       ]
     },
@@ -166,18 +146,15 @@
       "payload": [
         {
           "name": "x speed",
-          "c_type": "int16_t",
-          "optional": true
+          "c_type": "int16_t"
         },
         {
           "name": "y speed",
-          "c_type": "int16_t",
-          "optional": true
+          "c_type": "int16_t"
         },
         {
           "name": "phi speed",
-          "c_type": "int16_t",
-          "optional": true
+          "c_type": "int16_t"
         }
       ]
     },
@@ -187,8 +164,7 @@
       "payload": [
         {
           "name": "pozyx power control",
-          "c_type": "uint8_t",
-          "optional": true
+          "c_type": "uint8_t"
         }
       ]
     },
@@ -199,13 +175,11 @@
         {
           "name": "select sensor",
           "c_type": "uint8_t",
-          "bits": ["position", "euler", "quaternion"],
-          "optional": false
+          "bits": ["position", "euler", "quaternion"]
         },
         {
           "name": "interval",
-          "c_type": "uint16_t",
-          "optional": true
+          "c_type": "uint16_t"
         }
       ]
     },
@@ -338,8 +312,7 @@
       "payload": [
         {
           "name": "is pressed",
-          "c_type": "uint8_t",
-          "bit": ["is pressed"]
+          "c_type": "bool"
         }
       ]
     },
