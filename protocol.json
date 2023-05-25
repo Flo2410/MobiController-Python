@@ -126,7 +126,8 @@
         },
         {
           "name": "update_rate",
-          "c_type": "uint8_t"
+          "c_type": "uint8_t",
+          "unit": "10ms * update_rate"
         },
         {
           "name": "line_length",
