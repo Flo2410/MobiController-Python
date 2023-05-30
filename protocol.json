@@ -95,7 +95,8 @@
       "payload": [
         {
           "name": "user button mode",
-          "c_type": "uint8_t"
+          "c_type": "uint8_t",
+          "codes": ["INTERNAL", "EXTERNAL"]
         }
       ]
     },
