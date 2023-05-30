@@ -377,6 +377,16 @@
       ]
     },
     {
+      "min_id": 10,
+      "name": "pozyx power state",
+      "payload": [
+        {
+          "name": "on/off",
+          "c_type": "bool"
+        }
+      ]
+    },
+    {
       "min_id": 63,
       "name": "Firmware Info",
       "payload": [
