@@ -51,12 +51,17 @@ def main():
     min_mon = MINMonitor(port="/dev/ttyACM1", loglevel=INFO)
 
     builder = PayloadBuilder()
-    builder.append_uint8(0x01)
+    # builder.append_uint8(0b01001000)
     builder.append_uint16(1000)
 
-    min_mon.send_frame(0x20, builder.get_payload())
+    # imu 
+    # min_mon.send_frame(0x20, builder.get_payload())
 
-    # min_mon.send_frame(36, builder.get_payload())
+    # temp
+    min_mon.send_frame(36, builder.get_payload())
+
+    # builder.append_uint8(1)
+    # min_mon.send_frame(38, builder.get_payload())
 
     while True:
         while min_mon._recv_messages.qsize() > 0:

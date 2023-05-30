@@ -78,6 +78,8 @@ def decode_frame(frame: MINFrame):
             for value in data.get("payload"):
                 if value.get("c_type").lower() == "string":
                     read_value = pb.read_string()
+                elif value.get("c_type").lower() == "bool":
+                    read_value = pb.read_c_type("uint8_t")
                 else:
                     read_value = pb.read_c_type(value.get('c_type'))
 
