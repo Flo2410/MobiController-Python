@@ -203,7 +203,13 @@
     {
       "min_id": 44,
       "name": "imu calibration status",
-      "payload": []
+      "payload": [
+        {
+          "name": "interval",
+          "unit": "ms",
+          "c_type": "uint16_t"
+        }
+      ]
     },
     {
       "min_id": 61,
