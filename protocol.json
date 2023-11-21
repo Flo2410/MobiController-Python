@@ -201,6 +201,11 @@
       "payload": []
     },
     {
+      "min_id": 44,
+      "name": "imu calibration status",
+      "payload": []
+    },
+    {
       "min_id": 61,
       "name": "disable all intervals",
       "payload": []
@@ -384,6 +389,28 @@
         {
           "name": "on/off",
           "c_type": "bool"
+        }
+      ]
+    },
+    {
+      "min_id": 11,
+      "name": "imu calibration status",
+      "payload": [
+        {
+          "name": "system",
+          "c_type": "uint8_t"
+        },
+        {
+          "name": "gyro",
+          "c_type": "int8_t"
+        },
+        {
+          "name": "mag",
+          "c_type": "uint8_t"
+        },
+        {
+          "name": "accel",
+          "c_type": "uint8_t"
         }
       ]
     },
