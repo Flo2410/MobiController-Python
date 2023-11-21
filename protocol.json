@@ -212,6 +212,61 @@
       ]
     },
     {
+      "min_id": 45,
+      "name": "imu get calibration data",
+      "payload": []
+    },
+    {
+      "min_id": 46,
+      "name": "imu set calibration data",
+      "payload": [
+        {
+          "name": "offset gyroscope x",
+          "c_type": "int16_t"
+        },
+        {
+          "name": "offset gyroscope y",
+          "c_type": "int16_t"
+        },
+        {
+          "name": "offset gyroscope z",
+          "c_type": "int16_t"
+        },
+        {
+          "name": "offset magnetometer x",
+          "c_type": "int16_t"
+        },
+        {
+          "name": "offset magnetometer y",
+          "c_type": "int16_t"
+        },
+        {
+          "name": "offset magnetometer z",
+          "c_type": "int16_t"
+        },
+        {
+          "name": "offset accelerometer x",
+          "c_type": "int16_t"
+        },
+        {
+          "name": "offset accelerometer y",
+          "c_type": "int16_t"
+        },
+        {
+          "name": "offset accelerometer z",
+          "c_type": "int16_t"
+        }, 
+        {
+          "name": "radius magnetometer",
+          "c_type": "uint16_t"
+        },
+        {
+          "name": "radius accelerometer",
+          "c_type": "uint16_t"
+        }
+      ]
+    },
+    {
       "min_id": 61,
       "name": "disable all intervals",
       "payload": []
@@ -417,6 +472,56 @@
         {
           "name": "accel",
           "c_type": "uint8_t"
+        }
+      ]
+    },
+    {
+      "min_id": 12,
+      "name": "imu calibration data",
+      "payload": [
+        {
+          "name": "offset gyroscope x",
+          "c_type": "int16_t"
+        },
+        {
+          "name": "offset gyroscope y",
+          "c_type": "int16_t"
+        },
+        {
+          "name": "offset gyroscope z",
+          "c_type": "int16_t"
+        },
+        {
+          "name": "offset magnetometer x",
+          "c_type": "int16_t"
+        },
+        {
+          "name": "offset magnetometer y",
+          "c_type": "int16_t"
+        },
+        {
+          "name": "offset magnetometer z",
+          "c_type": "int16_t"
+        },
+        {
+          "name": "offset accelerometer x",
+          "c_type": "int16_t"
+        },
+        {
+          "name": "offset accelerometer y",
+          "c_type": "int16_t"
+        },
+        {
+          "name": "offset accelerometer z",
+          "c_type": "int16_t"
+        }, 
+        {
+          "name": "radius magnetometer",
+          "c_type": "uint16_t"
+        },
+        {
+          "name": "radius accelerometer",
+          "c_type": "uint16_t"
         }
       ]
     },
