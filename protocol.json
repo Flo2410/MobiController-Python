@@ -267,6 +267,11 @@
       ]
     },
     {
+      "min_id": 60,
+      "name": "jump to bootloader",
+      "payload": []
+    },
+    {
       "min_id": 61,
       "name": "disable all intervals",
       "payload": []
