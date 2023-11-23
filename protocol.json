@@ -285,7 +285,7 @@
   "data": [
     {
       "min_id": 0,
-      "name": "command stauts",
+      "name": "command status",
       "payload": [
         {
           "name": "status code",
