@@ -174,13 +174,13 @@ def main():
             bye()
             return
 
-        print(f"Upgrading the firmware to {current_version}")
+        print(f"Updating the firmware to {current_version}")
     else:
         firmware_bin_path = path.abspath(args.binary)
         print(f"Flashing binary from: {firmware_bin_path}")
 
-    do_upgrade = input("Do you want to upgrade? [y/N]: ").lower()
-    if do_upgrade != "y" and do_upgrade != "j":
+    do_update = input("Do you want to update? [y/N]: ").lower()
+    if do_update != "y" and do_update != "j":
         bye()
         return
 
