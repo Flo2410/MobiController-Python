@@ -143,7 +143,7 @@ def parse_args(parser: ArgumentParser):
 def main():
     global min_mon
     parser = ArgumentParser(
-        prog="MobiController Firmware Updater",
+        prog="updater.py",
         description="Update the firmware of the MobiController STM32.",
     )
     args = parse_args(parser)
